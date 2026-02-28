@@ -1,0 +1,23 @@
+{
+  "name": "hamster-choir-garden",
+  "version": "1.0.0",
+  "description": "Garden Of Hamsters Which Form A Whimsical Choir!",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miavene/HamsterChoirGarden-WICHacks2026.git"
+  },
+  "author": "Mia Venesky, Abigail Eckstein, and Shinea Gray",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miavene/HamsterChoirGarden-WICHacks2026/issues"
+  },
+  "homepage": "https://github.com/miavene/HamsterChoirGarden-WICHacks2026#readme",
+  "devDependencies": {
+    "electron": "^40.6.1"
+  }
+}
