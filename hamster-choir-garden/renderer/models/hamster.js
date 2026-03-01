@@ -49,7 +49,7 @@ class Hamster{
         this.gainExp(15);
         this.setState(this.State.BEING_PET);
         this.petCounter += 1;
-        if (this.petCounter >= 5){
+        if (this.petCounter >= 3){
             setTimeout(() => {this.setState(this.State.AGITATED); }, 5000);
         }
         else{
