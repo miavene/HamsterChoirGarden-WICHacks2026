@@ -16,11 +16,11 @@ class Garden{
     addHamster(){
 
         if (this.hamsters.length >= this.maxCapacity){
-            return //can't buy, not enough space
+            return null; //can't buy, not enough space
         }
 
         if (user.getCoinCount() < this.hamsterCost){
-            return //can't buy, not enough money
+            return null; //can't buy, not enough money
         }
 
         user.removeFromCoins(this.hamsterCost);
@@ -38,6 +38,10 @@ class Garden{
     }
 
     collectRevenue(){
+        for (const hamster of this.hamsters){
+            const revenue = hamster.getTotalRevenue();
+            user.addToCoins(revenue);
+        }
         
     }
 
@@ -46,3 +50,5 @@ class Garden{
 
 
 }
+
+export default Garden;
