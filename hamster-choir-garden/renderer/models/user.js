@@ -4,7 +4,7 @@ import Garden from "./garden.js";
 class user{
 
     constructor(){
-        this.coinCount = 0;
+        this.coinCount = parseInt(localStorage.getItem('coins')) || 0;
         this.gardens = [];
     }
 
@@ -15,12 +15,15 @@ class user{
     addToCoins(amount){
 
         this.coinCount += amount;
+        localStorage.setItem('coins', this.coinCount);
 
     }
 
     removeFromCoins(amount){
 
         this.coinCount -= amount;
+        localStorage.setItem('coins', this.coinCount);
+
 
     }
 
@@ -32,15 +35,6 @@ class user{
         return garden;
         
     }
-
-
-
-    
-
-
-
-
-
 
 
 }

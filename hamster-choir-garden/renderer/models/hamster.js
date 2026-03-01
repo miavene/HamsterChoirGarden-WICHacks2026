@@ -24,7 +24,9 @@ class Hamster{
         DRINKING: {id: "DRINKING", message: "is drinking."},
         BEING_PET: {id: "BEING_PET", message: "is being pet."}
     }
-        this.state = State.NEW;
+        this.state = this.State.NEW;
+        this.onStateChange = null;
+
 
     }
 
@@ -114,6 +116,10 @@ class Hamster{
 
     setState(state){
         this.state = state;
+
+        if (typeof this.onStateChange === "function") {
+            this.onStateChange(this);
+        }
     }
 
 
@@ -133,7 +139,7 @@ class Hamster{
 
     //Returns state message
     returnMessage(){
-        return state.message;
+        return this.state.message;
     }
 
 

@@ -12,28 +12,28 @@ class Garden{
 
     }
 
-    addHamster(){
-
-        if (this.hamsters.size >= this.maxCapacity){
-            return null; //can't buy, not enough space
+    addHamster() {
+        if (this.hamsters.length >= this.maxCapacity) {
+            return null; // no space
         }
 
-        if (user.getCoinCount() < this.hamsterCost){
-            return null; //can't buy, not enough money
+        if (user.getCoinCount() < this.hamsterCost) {
+            return null; // not enough coins
         }
 
         user.removeFromCoins(this.hamsterCost);
-        this.hamsterCost = this.hamsterCost * 2; 
+        this.hamsterCost = this.hamsterCost * 2;
 
         let rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
         let randHamster = HAMSTER_TYPES[Object.keys(HAMSTER_TYPES)[rand]];
-        while (this.hamsters.has(randHamster)){
+        while (this.hamsters.includes(randHamster)) {
             rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
             randHamster = HAMSTER_TYPES[Object.keys(HAMSTER_TYPES)[rand]];
         }
+
         const hamster = createHamster(randHamster);
         this.hamsters.push(hamster);
-
+        return hamster;
     }
 
     collectRevenue(){
