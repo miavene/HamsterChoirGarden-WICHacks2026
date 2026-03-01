@@ -1,9 +1,9 @@
 
-import {HAMSTER_TYPES} from "./data";
+import {HAMSTER_TYPES} from "../data/hamsterData";
+const {createHampster} = require('./hamsterFactory')
+
 
 class Garden{
-
-
 
     constructor(maxCapacity){
         this.maxCapacity = maxCapacity
@@ -11,14 +11,13 @@ class Garden{
 
     }
 
-    getHamster(){
+    addHamster(){
 
         var rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
         var randHamster = HAMSTER[Object.keys(HAMSTER_TYPES)[rand]];
         if (!hamsters.has(randHamster)){
-            //create the hamster with the hamster dataaaaa
-            
-
+            createHampster(randHamster);
+            this.hamsters.add(randHamster);
         }
 
 
