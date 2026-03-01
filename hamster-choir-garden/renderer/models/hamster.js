@@ -7,6 +7,7 @@ class Hamster{
         this.name = name;
         this.song = song
         this.baseRevenue = baseRevenue;
+        this.revenue = this.baseRevenue * this.multiplier;
         this.level = 0;
         this.multiplier = 1;
         this.exp = 0;
@@ -144,13 +145,9 @@ class Hamster{
 
 
     getTotalRevenue(){
-        return this.baseRevenue * this.multiplier;
+        return this.revenue;
     }
 
-
-    playSong(){
-
-    }
 
 
 
