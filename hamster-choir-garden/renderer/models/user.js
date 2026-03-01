@@ -25,6 +25,9 @@ class user{
 
     addNewGarden(){
 
+        garden = new Garden(10);
+        this.gardens.add(garden);
+        return garden;
         
     }
 
