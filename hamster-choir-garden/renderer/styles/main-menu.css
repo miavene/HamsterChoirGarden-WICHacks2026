@@ -16,6 +16,15 @@ body{
     justify-content: center;
     background: linear-gradient(180deg, #C0CCB3 0%, #97B278 100%);
 }
+
+.main-menu a,
+.main-menu a:visited,
+.main-menu a:hover,
+.main-menu a:active {
+    text-decoration: none;
+    color: #99BDA2FF;
+}
+
 .main-menu {
     display: flex;
     flex-direction: row;
