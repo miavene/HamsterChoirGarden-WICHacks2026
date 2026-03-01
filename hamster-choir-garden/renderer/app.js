@@ -1,25 +1,33 @@
 import User from "../renderer/models/user.js";
 import Garden from "../renderer/models/garden.js";
 
-const newGardenBtn = document.querySelector("#new-garden button");
+//menu page
 
-newGardenBtn.addEventListener("click", () => {
-    // Give starting coins if first time
-    if (User.getCoinCount() === 0) {
-        User.addToCoins(75);
-    }
+const newGardenDiv = document.getElementById("new-garden");
+if (newGardenDiv) {
+    const newGardenBtn = newGardenDiv.querySelector("button");
+    newGardenBtn.addEventListener("click", () => {
+        if (User.getCoinCount() === 0) {
+            User.addToCoins(75);
+        }
+        const garden = new Garden(10);
+        User.addNewGarden(garden);
+        window.location.href = `./pages/garden-1/index.html`;
+    });
+}
 
-    // Create new empty garden
-    const garden = new Garden(10); // max 10 hamsters
+function openHamsterPopup(hamster) {
+    document.getElementById("popup-hamster-name").textContent = hamster.getName();
+    document.getElementById("level").textContent = hamster.getLevel();
+    document.getElementById("state").textContent = hamster.returnMessage();
+    document.getElementById("hamster-popup").classList.remove("hidden");
+}
 
-    // Add to user's gardens
-    User.addNewGarden(garden);
+const hamsterPopup = document.getElementById("hamster-popup");
+const closePopupBtn = document.getElementById("close-popup");
 
-    // Redirect to garden page, passing the index of this garden
-    const gardenIndex = Array.from(User.gardens).length - 1;
-    window.location.href = `../pages/garden-1/index.html?garden=${gardenIndex}`;
+closePopupBtn.addEventListener("click", () => {
+    hamsterPopup.classList.add("hidden");
 });
 
-// get garden index from query parameter
-const params = new URLSearchParams(window.location.search);
-const gardenIndex = parseInt()
+

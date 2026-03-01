@@ -1,3 +1,5 @@
+import Garden from "./garden.js";
+
 
 class user{
 
@@ -25,9 +27,9 @@ class user{
 
     addNewGarden(){
 
-        garden = new Garden(10);
-        this.gardens.add(garden);
-        return garden;
+        this.garden = new Garden(10);
+        this.gardens.add(this.garden);
+        return this.garden;
         
     }
 
