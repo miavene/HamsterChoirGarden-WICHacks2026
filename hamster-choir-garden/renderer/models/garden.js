@@ -44,6 +44,10 @@ class Garden{
         
     }
 
+    getGarden(){
+        return this;
+    }
+
 
 
 
