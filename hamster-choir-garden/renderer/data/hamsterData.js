@@ -7,6 +7,23 @@ export const HAMSTER_TYPES = {
     song: "../data/songs/A.mp3"
     // multiplier: 1.1,
     // etc can be added here as needed
-    
-  }
+  },
+  2: {
+    name: "GleebyGlomp",
+    id: 1,
+    baseRevenue: 12,
+    song: "../data/songs/B.mp3"
+  },
+  3: {
+
+  },
+  4: {
+
+  },
+  5: {
+
+  },
+  6: {
+
+  },
 };

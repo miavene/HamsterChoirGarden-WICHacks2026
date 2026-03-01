@@ -145,6 +145,11 @@ class Hamster{
     }
 
 
+    playSong(){
+
+    }
+
+
 
 
 
