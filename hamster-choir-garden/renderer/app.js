@@ -15,6 +15,17 @@ if (newGardenDiv) {
         window.location.href = `./pages/garden-1/index.html`;
     });
 }
+// example: always take the last garden added
+const gardensArray = Array.from(User.gardens);
+const currentGarden = gardensArray[gardensArray.length - 1];
+
+//gardens page
+
+//add hamsters
+const addBtn = document.getElementById("add-btn");
+addBtn.addEventListener("click", ()=> {
+    currentGarden.addHamster();
+});
 
 function openHamsterPopup(hamster) {
     document.getElementById("popup-hamster-name").textContent = hamster.getName();
