@@ -18,6 +18,14 @@ body {
 
 }
 
+#home-btn {
+    width: auto;
+    max-width: 180px;
+    padding: 6px 12px;
+    justify-self: end; 
+    align-self: start;
+}
+
 #activity-feed h3 {
     padding: 1px;
     margin: 0;
@@ -91,6 +99,12 @@ body {
     justify-content: flex-end;
     margin: auto;
 }
+#home-btn {
+    width: auto;
+    max-width: 140px;
+    padding: 6px 10px;
+    margin-left: 8px;
+}
 
 #currency-bar {
     display: flex;
@@ -111,6 +125,25 @@ body {
     padding: 5px 20px;
     transition: all .33s ease;
     width: 60px;
+#currency-bar {
+    display: flex;
+    margin-left: auto;
+    gap: 8px;
+    border: 4px solid #99BDA2FF;
+    font-size: 18px;
+    font-weight: 400;
+    color: #bda6c4;
+    background-color: #DDE9DF;
+    border-radius: 25px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #988198;
+    opacity: 100%;
+    z-index: 1001;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 12px;
+    transition: all .33s ease;
+}
 
 }
 
@@ -151,6 +184,33 @@ body {
 #hamster-popup h3 {
     font-size: 14px;
 }
+.hamster{
+    position: absolute;
+    width: 120px;
+    height: 110px;
+    background-size: cover;
+    opacity: 0;
+    transition: all .33s ease;
+    animation: bounce 1s infinite;
+}
+#hamster1 {
+    background-image: url('../assets/Hamsters/hamster1.png');
+    animation: hamsterWiggle 2.8s ease-in-out infinite;
+    bottom: 60px;
+    left: 35px;
+}
+#hamster1.active{
+    opacity: 1;
+}
+#hamster2 {
+    background-image: url('../assets/Hamsters/hamster2.png');
+    animation: hamsterWiggle 2.8s ease-in-out infinite;
+    bottom: 230px;
+    left: 80px;
+}
+#hamster2.active{
+    opacity: 1;
+}
 
 #sidebar-nav a,
 #sidebar-nav a:visited,
@@ -190,4 +250,30 @@ body {
     display: flex;
     padding-bottom: 10px;
     gap:2px;
+}
+
+/* Hamster Animation */
+@keyframes hamsterWiggle {
+    0%, 100% {
+        transform: translateX(0)
+    }
+    25% {
+        transform: translateX(-5px) rotateZ(-5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(0);
+    }
+    75% {
+        transform: translateX(5px) rotateZ(5deg);
+    }
+    95%{
+        transform: translateY(0) rotateZ(0);
+    }
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.hamster {
+    display: inline-block;
+    cursor: pointer;
 }
