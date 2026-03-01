@@ -7,8 +7,30 @@ class user{
     }
 
     getCoinCount(){
+        return this.coinCount;
+    }
+
+    addToCoins(amount){
+
+        this.coinCount += amount;
 
     }
+
+    removeFromCoins(amount){
+
+        this.coinCount -= amount;
+
+    }
+
+
+    addNewGarden(){
+
+        
+    }
+
+
+
+    
 
 
 
