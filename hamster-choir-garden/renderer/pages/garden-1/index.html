@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang = en>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="content-security-policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden 1</title>
+    <link rel="stylesheet" href="../../styles/garden-1.css">
+  </head>
+  <body>
+
+  <div id="app">
+
+    <!-- 🌱 Main Garden Area -->
+    <section id="garden">
+      <div id="hamster-container"></div>
+      <div id="effects-layer"></div>
+    </section>
+
+    <!-- 📦 Sidebar Area -->
+    <aside id="sidebar">
+
+      <!-- Small Top Buttons -->
+      <div id="sidebar-nav">
+        <button id="add-btn" class="button-background">Add</button>
+        <button id="garden-btn" class="button-background"><a href ="../gardens-page/index.html">Garden</a></button>
+        <button id="goals-btn" class="button-background">Goals</button>
+      </div>
+
+      <!-- Activity Feed -->
+      <div id="activity-feed">
+        <h3>Activity</h3>
+        <div id="activity-log"></div>
+      </div>
+
+      <!-- Currency -->
+      <div id="currency-bar">
+        <span>Coins: </span>
+        <span id="coin-count">0</span>
+      </div>
+
+    </aside>
+
+  </div>
+  <!-- Hamster popup  -->
+  <div id="hamster-popup" class="hidden">
+    <h3 id="popup-hamster-name">Hamster Name</h3>
+    <div id="hamster-stats">
+      <p>Stage: <span id="stage">Seed</span></p>
+      <p>Level: <span id="level">0</span></p>
+      <p>Revenue: <span id="revenue">0</span></p>
+      <p>State: <span id="state">Normal</span></p>
+<!--      <p>Exp Until Next Level: <span id="state">0</span></p>-->
+
+    </div>
+    <div id="hamster-actions">
+      <button id="sleep-btn" class = "action-button-background">Sleep</button>
+      <button id="feed-btn" class="action-button-background">Feed</button>
+      <button id="drink-btn" class="action-button-background">Water</button>
+      <button id="pet-btn" class="action-button-background">Pet</button>
+    </div>
+    <button id="close-popup" class="action-button-background">Close</button>
+  </div>
+
+  </body>
+</html>
