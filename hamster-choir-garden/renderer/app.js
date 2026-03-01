@@ -75,8 +75,10 @@ document.getElementById("hamster6").addEventListener("click", () => {
 
 
 document.getElementById("sleep-btn").addEventListener("click", () => {
-    if (!currentHamster) return;
+    if (!currentHamster || currentHamster.uiBusy || currentHamster.isBusy()) return;
     currentHamster.sleep();
+    currentHamster.uiBusy = true;
+
     // mute audio
     const divId = `hamster${currentHamster.getId()}`;
     const audio = document.getElementById(`${divId}Audio`);
@@ -89,6 +91,7 @@ document.getElementById("sleep-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster1;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 2) {
@@ -98,6 +101,7 @@ document.getElementById("sleep-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster2;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 3) {
@@ -107,6 +111,7 @@ document.getElementById("sleep-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster3;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 4) {
@@ -125,6 +130,7 @@ document.getElementById("sleep-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster5;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 6) {
@@ -134,12 +140,16 @@ document.getElementById("sleep-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster6;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 });
 
 document.getElementById("feed-btn").addEventListener("click", () => {
-    if (!currentHamster) return;
+    if (!currentHamster || currentHamster.uiBusy || currentHamster.isBusy()) return;
     currentHamster.eat();
+    currentHamster.uiBusy = true;
+
+
 
     if (currentHamster.getId() === 1) {
         const hamster = document.getElementById("hamster1");
@@ -148,6 +158,7 @@ document.getElementById("feed-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster1;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 2) {
@@ -157,6 +168,7 @@ document.getElementById("feed-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster2;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 3) {
@@ -166,6 +178,7 @@ document.getElementById("feed-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster3;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 4) {
@@ -175,6 +188,7 @@ document.getElementById("feed-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster4;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 5) {
@@ -184,6 +198,7 @@ document.getElementById("feed-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster5;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 6) {
@@ -193,12 +208,15 @@ document.getElementById("feed-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster6;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 });
 
 document.getElementById("drink-btn").addEventListener("click", () => {
-    if (!currentHamster) return;
+    if (!currentHamster || currentHamster.uiBusy || currentHamster.isBusy()) return;
     currentHamster.water();
+    currentHamster.uiBusy = true;
+
 
     if (currentHamster.getId() === 1) {
         const hamster = document.getElementById("hamster1");
@@ -207,6 +225,7 @@ document.getElementById("drink-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster1;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 2) {
@@ -216,6 +235,7 @@ document.getElementById("drink-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster2;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 3) {
@@ -225,6 +245,7 @@ document.getElementById("drink-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster3;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 4) {
@@ -234,6 +255,7 @@ document.getElementById("drink-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster4;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 5) {
@@ -243,6 +265,7 @@ document.getElementById("drink-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster5;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 6) {
@@ -252,13 +275,15 @@ document.getElementById("drink-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster6;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
 });
 
 document.getElementById("pet-btn").addEventListener("click", () => {
-    if (!currentHamster) return;
+    if (!currentHamster || currentHamster.uiBusy || currentHamster.isBusy()) return;
     currentHamster.pet();
+    currentHamster.uiBusy = true;
 
     if (currentHamster.getId() === 1) {
         const hamster = document.getElementById("hamster1");
@@ -267,6 +292,7 @@ document.getElementById("pet-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster1;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 2) {
@@ -276,6 +302,7 @@ document.getElementById("pet-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster2;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 3) {
@@ -285,6 +312,7 @@ document.getElementById("pet-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster3;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 4) {
@@ -294,6 +322,7 @@ document.getElementById("pet-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster4;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 5) {
@@ -303,6 +332,7 @@ document.getElementById("pet-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster5;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 
     if (currentHamster.getId() === 6) {
@@ -312,6 +342,7 @@ document.getElementById("pet-btn").addEventListener("click", () => {
         // Revert back after 20 seconds (20000 ms)
         setTimeout(() => {
             hamster.style.backgroundImage = defaultHamster6;
+            currentHamster.uiBusy = false;
         }, 20000);    }
 });
 
