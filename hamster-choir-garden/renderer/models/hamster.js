@@ -87,6 +87,8 @@ class Hamster{
     levelUp(){
         //if certain level reached, stageUp
         this.level += 1;
+        this.multiplier += 0.5;
+        return this.level;
     }
 
 
