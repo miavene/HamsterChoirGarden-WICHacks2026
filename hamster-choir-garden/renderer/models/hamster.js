@@ -18,7 +18,7 @@ class Hamster{
         NEW: {id: "NEW", message: "has sprouted in the garden!"},
         NORMAL: {id: "NORMAL", message: "is feeling okay!"},
         FULL: { id: "FULL", message: "is feeling full."},
-        AGITATED: {id: "AGITATED", message: "is feeling agitated from being pet TOO much."},
+        AGITATED: {id: "AGITATED", message: "is feeling agitated."},
         HAPPY: {id: "HAPPY", message: "is feeling happy!"},
         SLEEPING: {id: "SLEEPING", message: "is sleeping."},
         EATING: {id: "EATING", message: "is eating."},
@@ -51,7 +51,7 @@ class Hamster{
         this.setState(this.State.BEING_PET);
         this.petCounter += 1;
         if (this.petCounter >= 5){
-            setTimeout(this.setState, 5000, this.State.AGITATED);
+            setTimeout(() => {this.setState(this.State.AGITATED); }, 5000);
         }
         else{
             setTimeout(() => {this.setState(this.State.HAPPY); }, 5000);
@@ -73,6 +73,7 @@ class Hamster{
         }
         this.gainExp(5);
         this.setState(this.State.SLEEPING);
+        this.petCounter = 0;
         setTimeout(()=>{this.setState(this.State.NORMAL);}, 20000);
     }
 
