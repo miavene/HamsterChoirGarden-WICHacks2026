@@ -4,7 +4,11 @@ import Garden from "./garden.js";
 class user{
 
     constructor(){
-        this.coinCount = parseInt(localStorage.getItem('coins')) || 0;
+        //TODO: uncomment this so it isn't hard codded
+
+        // this.coinCount = parseInt(localStorage.getItem('coins')) || 0;
+        this.coinCount = 100000; // always start with 75 coins
+
         this.gardens = [];
     }
 

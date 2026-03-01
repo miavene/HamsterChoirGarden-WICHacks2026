@@ -352,7 +352,7 @@ body {
         transform: translateX(-5px) rotateZ(10deg);
     }
     67% {
-        transform: rotateZ(0px);
+        transform: rotateZ(0);
     }
     80% {
         transform: translateX(13px) rotateZ(-12deg);

@@ -1,5 +1,6 @@
 import User from "../renderer/models/user.js";
 import Garden from "../renderer/models/garden.js";
+
 //menu page
 
 const newGardenDiv = document.getElementById("new-garden");
@@ -38,41 +39,42 @@ function addActivity(text) {
     log.scrollTop = log.scrollHeight; // scroll to bottom
 }
 
-// clicking hamster open popup menu
-document.getElementById("hamster1").addEventListener("click", () => {
-    document.getElementById("hamster-popup").classList.remove("hidden");
-});
-
-// clicking close on popup close popup menu
-document.getElementById("close-popup").addEventListener("click", () => {
-    document.getElementById("hamster-popup").classList.add("hidden");
-});
 //action event listens
 
+// clicking hamster open popup menu
+document.getElementById("hamster1").addEventListener("click", () => {
+    const hamster = currentGarden.hamsters.find(h => h.getId() === 1);
+    if (hamster) openHamsterPopup(hamster);
+});
+
+document.getElementById("hamster2").addEventListener("click", () => {
+    const hamster = currentGarden.hamsters.find(h => h.getId() === 2);
+    if (hamster) openHamsterPopup(hamster);
+});
 document.getElementById("sleep-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.sleep();
-    addActivity(`${currentHamster.getName()} ${currentHamster.returnMessage()}`);
+    // mute audio
+    const divId = `hamster${currentHamster.getId()}`;
+    const audio = document.getElementById(`${divId}Audio`);
+    if (audio) audio.muted = true;
+
 });
 
 document.getElementById("feed-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.eat();
-    addActivity(`${currentHamster.getName()} ${currentHamster.returnMessage()}`);
-
 });
 
 document.getElementById("drink-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.water();
-    addActivity(`${currentHamster.getName()} ${currentHamster.returnMessage()}`);
 
 });
 
 document.getElementById("pet-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.pet();
-    addActivity(`${currentHamster.getName()} ${currentHamster.returnMessage()}`);
 
 });
 
@@ -83,44 +85,71 @@ homebtn.addEventListener("click", ()=>{
 
 });
 
+// update plant button to show the next pull
+function updatePlantButton() {
+    const addBtn = document.getElementById("add-btn");
+    addBtn.textContent = `PLANT: ${currentGarden.hamsterCost}🪙`;
+}
+
 //add hamsters
 const addBtn = document.getElementById("add-btn");
-addBtn.addEventListener("click", ()=> {
-    const hamster = currentGarden.addHamster();
-    if (hamster) {
-        //TODO: make this so the random hamster gets shown after we add all hamsters
-        const h1= document.getElementById("hamster1");
-        h1.classList.add("active");
-        const hamster1Audio = document.getElementById("hamster1Audio");
-        hamster1Audio.muted = false;
-        hamster1Audio.play();
+addBtn.addEventListener("click", () => {
+    const result = currentGarden.addHamster();
+
+    if (!result) {
+        addActivity("Not enough coins or space!");
+        updateCoins();
+        return;
     }
 
-    if (hamster) {
-        addActivity(`${hamster.getName()} ${hamster.returnMessage()}`);
+    const { hamster, isDuplicate } = result;
+
+    if (isDuplicate) {
+        // already have this hamster, just add multiplier
+        hamster.multiplier += 0.5;
+        addActivity(`${hamster.getName()} got a multiplier boost! (x${hamster.multiplier})`);
     } else {
-        addActivity("Not enough coins or space!");
+        // new hamster
+        const divId = `hamster${hamster.getId()}`;
+        const hamsterDiv = document.getElementById(divId);
+        if (hamsterDiv) {
+            hamsterDiv.classList.add("active");
+            const audio = hamsterDiv.querySelector("audio");
+            if (audio) { audio.muted = false; audio.play(); }
+        }
+        addActivity(`${hamster.getName()} ${hamster.returnMessage()}`);
     }
+
     updateCoins();
+    updatePlantButton();
 });
 
 
 function openHamsterPopup(hamster) {
     currentHamster = hamster;
 
+    // clear old listener first
+    if (currentHamster.onStateChange) {
+        currentHamster.onStateChange = null;
+    }
+
     document.getElementById("popup-hamster-name").textContent = hamster.getName();
     document.getElementById("level").textContent = hamster.getLevel();
-    document.getElementById("state").textContent = hamster.returnMessage();
+    document.getElementById("state").textContent = hamster.getStateName();
     document.getElementById("hamster-popup").classList.remove("hidden");
 
     // automatically update popup and activity feed when hamster state changes
     currentHamster.onStateChange = (h) => {
-        //update popup
         document.getElementById("level").textContent = h.getLevel();
-        document.getElementById("state").textContent = h.returnMessage();
-
-        // Add to activity feed
+        document.getElementById("state").textContent = h.getStateName();
         addActivity(`${h.getName()} ${h.returnMessage()}`);
+
+        // mute/unmute based on sleep state
+        const divId = `hamster${h.getId()}`;
+        const audio = document.getElementById(`${divId}Audio`);
+        if (audio) {
+            audio.muted = h.getStateName() === "SLEEPING";
+        }
     };
 }
 
@@ -133,7 +162,7 @@ closePopupBtn.addEventListener("click", () => {
 
 function updateCoins() {
     const coinSpan = document.getElementById("coin-count");
-    coinSpan.textContent = User.getCoinCount(); // assuming you have this function
+    coinSpan.textContent = User.getCoinCount() + " 🪙"; // assuming you have this function
 }
 
 updateCoins();
