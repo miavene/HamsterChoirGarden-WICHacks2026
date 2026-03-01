@@ -3,7 +3,8 @@ export const HAMSTER_TYPES = {
   1: {
     name: "Bleeblorble",
     id: 0,
-    baseRevenue: 10
+    baseRevenue: 10,
+    song: ""
     // multiplier: 1.1,
     // etc can be added here as needed
     
