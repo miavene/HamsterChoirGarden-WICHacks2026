@@ -4,9 +4,11 @@ import Garden from "../renderer/models/garden.js";
 //menu page
 
 const exitbtn = document.getElementById("exit-btn");
-exitbtn.addEventListener("click", ()=>{
-    window.close();
-});
+if (exitbtn) {
+    exitbtn.addEventListener("click", ()=>{
+        window.close();
+    });
+}
 
 const newGardenDiv = document.getElementById("new-garden");
 if (newGardenDiv) {
