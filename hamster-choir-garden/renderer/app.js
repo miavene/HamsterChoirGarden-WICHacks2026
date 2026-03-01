@@ -51,6 +51,28 @@ document.getElementById("hamster2").addEventListener("click", () => {
     const hamster = currentGarden.hamsters.find(h => h.getId() === 2);
     if (hamster) openHamsterPopup(hamster);
 });
+
+document.getElementById("hamster3").addEventListener("click", () => {
+    const hamster = currentGarden.hamsters.find(h => h.getId() === 3);
+    if (hamster) openHamsterPopup(hamster);
+});
+
+document.getElementById("hamster4").addEventListener("click", () => {
+    const hamster = currentGarden.hamsters.find(h => h.getId() === 4);
+    if (hamster) openHamsterPopup(hamster);
+});
+
+document.getElementById("hamster5").addEventListener("click", () => {
+    const hamster = currentGarden.hamsters.find(h => h.getId() === 5);
+    if (hamster) openHamsterPopup(hamster);
+});
+
+document.getElementById("hamster6").addEventListener("click", () => {
+    const hamster = currentGarden.hamsters.find(h => h.getId() === 6);
+    if (hamster) openHamsterPopup(hamster);
+});
+
+
 document.getElementById("sleep-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.sleep();
@@ -135,6 +157,7 @@ function openHamsterPopup(hamster) {
 
     document.getElementById("popup-hamster-name").textContent = hamster.getName();
     document.getElementById("level").textContent = hamster.getLevel();
+    document.getElementById("revenue").textContent = hamster.getTotalRevenue() +" 🪙" ;
     document.getElementById("state").textContent = hamster.getStateName();
     document.getElementById("hamster-popup").classList.remove("hidden");
 
@@ -142,6 +165,8 @@ function openHamsterPopup(hamster) {
     currentHamster.onStateChange = (h) => {
         document.getElementById("level").textContent = h.getLevel();
         document.getElementById("state").textContent = h.getStateName();
+        document.getElementById("revenue").textContent = h.getTotalRevenue() + " 🪙";
+
         addActivity(`${h.getName()} ${h.returnMessage()}`);
 
         // mute/unmute based on sleep state
@@ -160,9 +185,20 @@ closePopupBtn.addEventListener("click", () => {
     hamsterPopup.classList.add("hidden");
 });
 
+// auto money section
+try {
+    if (currentGarden) {
+        currentGarden.collectRevenue();
+        const intervalId = setInterval(currentGarden.collectRevenue(), 1000);
+    }
+} catch (error) {
+    console.error("Error while scheduling task:", error);
+}
+
 function updateCoins() {
     const coinSpan = document.getElementById("coin-count");
     coinSpan.textContent = User.getCoinCount() + " 🪙"; // assuming you have this function
 }
 
 updateCoins();
+
