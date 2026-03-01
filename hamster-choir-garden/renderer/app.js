@@ -130,7 +130,7 @@ addBtn.addEventListener("click", () => {
     if (isDuplicate) {
         // already have this hamster, just add multiplier
         hamster.levelUp();
-        addActivity(`${hamster.getName()} gain a free level!`);
+        addActivity(`${hamster.getName()} gained a free level!`);
         document.getElementById("revenue").textContent = hamster.getTotalRevenue() + " 🪙";
     } else {
         // new hamster
