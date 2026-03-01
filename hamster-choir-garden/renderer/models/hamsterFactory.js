@@ -1,15 +1,12 @@
-import {HAMSTER_TYPES} from "../data/hamsterData";
+import Hamster from "./hamster";
 
-class hamsterFactory{
+export default function createHamster(hamsterData){
+        const id = hamsterData.id;
+        const name = hamsterData.name;
+        const baseRevenue = hamsterData.baseRevenue;
+        const song = hamsterData.song;
 
-    createHamster(hamsterData){
-        var id = hamsterData.id;
-        var name = hamsterData.name;
-        var baseRevenue = hamsterData.baseRevenue;
-        var song = hamsterData.song
-
-        return new Hamster(id, name, baseRevenue, song)
-
-
+        return new Hamster(id, name, baseRevenue, song);
     }
-}
+
+

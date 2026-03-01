@@ -1,8 +1,7 @@
 
 import {HAMSTER_TYPES} from "../data/hamsterData.js";
 import user from "./user.js"
-const {createHamster} = require('./hamsterFactory')
-
+import createHamster from "./hamsterFactory.js"
 
 class Garden{
 
@@ -15,7 +14,7 @@ class Garden{
 
     addHamster(){
 
-        if (this.hamsters.length >= this.maxCapacity){
+        if (this.hamsters.size >= this.maxCapacity){
             return null; //can't buy, not enough space
         }
 
@@ -26,14 +25,14 @@ class Garden{
         user.removeFromCoins(this.hamsterCost);
         this.hamsterCost = this.hamsterCost * 2; 
 
-        var rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
-        var randHamster = HAMSTER[Object.keys(HAMSTER_TYPES)[rand]];
-        while (hamsters.has(randHamster)){
-            var rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
-            var randHamster = HAMSTER[Object.keys(HAMSTER_TYPES)[rand]];
+        let rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
+        let randHamster = HAMSTER_TYPES[Object.keys(HAMSTER_TYPES)[rand]];
+        while (this.hamsters.has(randHamster)){
+            rand = Math.floor(Math.random() * Object.keys(HAMSTER_TYPES).length);
+            randHamster = HAMSTER_TYPES[Object.keys(HAMSTER_TYPES)[rand]];
         }
-        createHamster(randHamster);
-        this.hamsters.add(randHamster);
+        const hamster = createHamster(randHamster);
+        this.hamsters.add(hamster);
 
     }
 
