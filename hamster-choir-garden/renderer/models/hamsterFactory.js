@@ -1,4 +1,4 @@
-import Hamster from "./hamster";
+import Hamster from "./hamster.js";
 
 export default function createHamster(hamsterData){
         const id = hamsterData.id;
