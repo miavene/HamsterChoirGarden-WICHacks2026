@@ -36,7 +36,7 @@ class Hamster{
         this.gainExp(15);
         const prevState = this.state;
         this.setState(this.State.DRINKING);
-        setTimeout(this.setState, 10000, prevState);
+        setTimeout(() => {this.setState(prevState);}, 10000);
     }
 
 
@@ -51,7 +51,7 @@ class Hamster{
             setTimeout(this.setState, 5000, this.State.AGITATED);
         }
         else{
-            setTimeout(this.setState, 5000, this.State.HAPPY);
+            setTimeout(() => {this.setState(this.State.HAPPY); }, 5000);
         }
     }
 
@@ -61,7 +61,7 @@ class Hamster{
         }
         this.gainExp(50);
         this.setState(this.State.EATING);
-        setTimeout(this.setState, 15000, this.State.FULL);
+        setTimeout(() => {this.setState(this.State.FULL);}, 15000);
     }
 
     sleep(){
@@ -70,7 +70,7 @@ class Hamster{
         }
         this.gainExp(5);
         this.setState(this.State.SLEEPING);
-        setTimeout(this.setState, 20000, this.State.NORMAL);
+        setTimeout(()=>{this.setState(this.State.NORMAL);}, 20000);
     }
 
     gainExp(amount){
@@ -86,10 +86,7 @@ class Hamster{
         this.level += 1;
     }
 
-    stageUp(){
-        //milestone tracker
-        this.stage += 1;
-    }
+
 
     getId(){
         return this.id;
