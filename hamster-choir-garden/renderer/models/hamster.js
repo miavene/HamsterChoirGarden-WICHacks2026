@@ -7,9 +7,9 @@ class Hamster{
         this.name = name;
         this.song = song
         this.baseRevenue = baseRevenue;
+        this.multiplier = 1;
         this.revenue = this.baseRevenue * this.multiplier;
         this.level = 0;
-        this.multiplier = 1;
         this.exp = 0;
         this.busy = false;
         this.petCounter = 0;
