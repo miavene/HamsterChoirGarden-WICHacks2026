@@ -1,6 +1,5 @@
 import User from "../renderer/models/user.js";
 import Garden from "../renderer/models/garden.js";
-
 //menu page
 
 const newGardenDiv = document.getElementById("new-garden");
@@ -40,6 +39,15 @@ function addActivity(text) {
     log.scrollTop = log.scrollHeight; // scroll to bottom
 }
 
+// clicking hamster open popup menu
+document.getElementById("hamster1").addEventListener("click", () => {
+    document.getElementById("hamster-popup").classList.remove("hidden");
+});
+
+// clicking close on popup close popup menu
+document.getElementById("close-popup").addEventListener("click", () => {
+    document.getElementById("hamster-popup").classList.add("hidden");
+});
 //action event listens
 
 document.getElementById("sleep-btn").addEventListener("click", () => {
@@ -84,6 +92,9 @@ addBtn.addEventListener("click", ()=> {
         //TODO: make this so the random hamster gets shown after we add all hamsters
         const h1= document.getElementById("hamster1");
         h1.classList.add("active");
+        const hamster1Audio = document.getElementById("hamster1Audio");
+        hamster1Audio.muted = false;
+        hamster1Audio.play();
     }
 
     if (hamster) {

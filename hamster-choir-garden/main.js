@@ -7,6 +7,7 @@ const createWindow = () => {
     height: 600
   })
 
+  win.maximize(); 
   win.loadFile('renderer/index.html')
 }
 app.whenReady().then(() => {

@@ -50,7 +50,7 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 25px;
-    border: 6px #99bda2 solid;
+    border: 3px #99bda2 solid;
     /* text colors */
     color: #bda6c4;
     -webkit-text-stroke-width: 1px;
@@ -73,7 +73,7 @@ body {
 
 .button-background{
     display: flex;
-    border: 4px solid #99BDA2FF;
+    border: 3px solid #99BDA2FF;
     margin: 0;
     font-style: normal;
     font-family: "Cherry Bomb One", system-ui;
@@ -116,7 +116,7 @@ body {
     display: flex;
     margin-left: auto;
     gap: 5px;
-    border: 4px solid #99BDA2FF;
+    border: 3px solid #99BDA2FF;
     font-size: 18px;
     font-weight: 400;
     color: #bda6c4;
@@ -135,7 +135,7 @@ body {
     display: flex;
     margin-left: auto;
     gap: 8px;
-    border: 4px solid #99BDA2FF;
+    border: 3px solid #99BDA2FF;
     font-size: 18px;
     font-weight: 400;
     color: #bda6c4;
@@ -176,15 +176,17 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: 25px;
-    border: 6px #99bda2 solid;
+    border: 3px #99bda2 solid;
     /* text colors */
     color: #bda6c4;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #988198;
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(0.445, 0.05, 0.55, 0.95)
 }
 
 .hidden {
-    display: none !important;
+    opacity: 0 !important;
 }
 
 #hamster-popup h3 {
@@ -202,7 +204,7 @@ body {
 #hamster1 {
     background-image: url('../assets/Hamsters/hamster1.png');
     animation: hamsterWiggle 2.8s ease-in-out infinite;
-    bottom: 60px;
+    bottom: 20px;
     left: 35px;
 }
 #hamster1.active{
@@ -210,8 +212,8 @@ body {
 }
 #hamster2 {
     background-image: url('../assets/Hamsters/hamster2.png');
+    animation: none;
     animation: hamsterWiggle 2.8s ease-in-out infinite;
-    bottom: 230px;
     left: 80px;
 }
 #hamster2.active{
