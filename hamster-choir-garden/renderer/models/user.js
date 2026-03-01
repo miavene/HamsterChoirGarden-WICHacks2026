@@ -7,7 +7,7 @@ class user{
         //TODO: uncomment this so it isn't hard codded
 
         // this.coinCount = parseInt(localStorage.getItem('coins')) || 0;
-        this.coinCount = 100000; // always start with 75 coins
+        this.coinCount = 50; // always start with 75 coins
 
         this.gardens = [];
     }
