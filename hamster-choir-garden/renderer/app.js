@@ -29,7 +29,6 @@ if (gardenSection) {
 //keep track of current hamster
 let currentHamster = null;
 
-
 //add activity to the log
 function addActivity(text) {
     const log = document.getElementById("activity-log");

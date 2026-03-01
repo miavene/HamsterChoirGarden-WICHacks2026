@@ -194,17 +194,18 @@ body {
 }
 .hamster{
     position: absolute;
-    width: 120px;
-    height: 110px;
+    width: 220px;
+    height: 210px;
     background-size: cover;
+    animation: none;
     opacity: 0;
     transition: all .33s ease;
     animation: bounce 1s infinite;
+    bottom: 10px;
 }
 #hamster1 {
     background-image: url('../assets/Hamsters/hamster1.png');
     animation: hamsterWiggle 2.8s ease-in-out infinite;
-    bottom: 20px;
     left: 35px;
 }
 #hamster1.active{
@@ -212,9 +213,40 @@ body {
 }
 #hamster2 {
     background-image: url('../assets/Hamsters/hamster2.png');
-    animation: none;
-    animation: hamsterWiggle 2.8s ease-in-out infinite;
-    left: 80px;
+    animation: hamsterWiggle2 1.8s ease-in-out infinite;
+    left: 210px;
+}
+#hamster3 {
+    background-image: url('../assets/Hamsters/hamster3.png');
+    animation: hamsterWiggle 1.2s ease-in-out infinite;
+    left: 370px;
+}
+#hamster4 {
+    background-image: url('../assets/Hamsters/hamster4.png');
+    animation: hamsterWiggle4 .7s ease-in-out infinite;
+    left: 550px;
+}
+#hamster5 {
+    background-image: url('../assets/Hamsters/hamster5.png');
+    animation: hamsterWiggle3 1.5s ease-in-out infinite;
+    left: 730px;
+}
+#hamster6 {
+    background-image: url('../assets/Hamsters/hamster6.png');
+    animation: hamsterWiggle2 1.8s ease-in-out infinite;
+    left: 900px;
+}
+#hamster6.active{
+    opacity: 1;
+}
+#hamster5.active{
+    opacity: 1;
+}
+#hamster4.active{
+    opacity: 1;
+}
+#hamster3.active{
+    opacity: 1;
 }
 #hamster2.active{
     opacity: 1;
@@ -276,6 +308,57 @@ body {
     }
     95%{
         transform: translateY(0) rotateZ(0);
+    }
+}
+@keyframes hamsterWiggle2 {
+    0%, 100% {
+        transform: translateX(0)
+    }
+    25% {
+        transform: translateX(7px) rotateZ(7deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0);
+    }
+    75% {
+        transform: translateX(-7px) rotateZ(-7deg);
+    }
+    95%{
+        transform: translateY(0) rotateZ(0);
+    }
+}
+@keyframes hamsterWiggle4 {
+    0%, 100% {
+        transform: translateX(0)
+    }
+    25% {
+        transform: translateX(7px) rotateZ(7deg);
+    }
+    50% {
+        transform: translateY(-45px) rotate(0);
+    }
+    75% {
+        transform: translateX(-7px) rotateZ(-7deg);
+    }
+    95%{
+        transform: translateY(0) rotateZ(0);
+    }
+}
+@keyframes hamsterWiggle3 {
+    0%, 100% {
+        transform: translateX(0)
+    }
+    12% {
+        transform: translateX(-5px) rotateZ(10deg);
+    }
+    67% {
+        transform: rotateZ(0px);
+    }
+    80% {
+        transform: translateX(13px) rotateZ(-12deg);
+    }
+    97%{
+        transform: translateY(-3px);
     }
 }
 ::-webkit-scrollbar {
