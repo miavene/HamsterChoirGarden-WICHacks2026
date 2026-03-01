@@ -8,10 +8,8 @@ class Hamster{
         this.song = song
         this.baseRevenue = baseRevenue;
         this.level = 0;
-        this.stage = 0;
         this.multiplier = 1;
         this.exp = 0;
-        this.stage = seed;
         this.busy = false;
         this.petCounter = 0;
         this.levelsByExp = [24, 74, 199, 499, 1999]; //Example: level 0: 0-24 exp. Once it goes above 24 exp (25+ exp), it goes to level 1. 
@@ -43,17 +41,17 @@ class Hamster{
 
 
     pet(){
-        if (this.state == AGITATED || this.isBusy()){
+        if (this.state === this.State.AGITATED || this.isBusy()){
             return;
         }
         this.gainExp(15);
         this.setState(this.State.BEING_PET);
-        petCounter += 1;
-        if (petCounter >= 5){
-            setTimeout(this.setState, 5000, AGITATED);
+        this.petCounter += 1;
+        if (this.petCounter >= 5){
+            setTimeout(this.setState, 5000, this.State.AGITATED);
         }
         else{
-            setTimeout(this.setState, 5000, HAPPY);
+            setTimeout(this.setState, 5000, this.State.HAPPY);
         }
     }
 
@@ -63,34 +61,34 @@ class Hamster{
         }
         this.gainExp(50);
         this.setState(this.State.EATING);
-        setTimeout(this.setState, 15000, FULL);
+        setTimeout(this.setState, 15000, this.State.FULL);
     }
 
     sleep(){
         if (this.isBusy()){
             return;
         }
-        gainExp(5);
-        setState(this.State.SLEEPING);
-        setTimeout(this.setState, 20000, NORMAL);
+        this.gainExp(5);
+        this.setState(this.State.SLEEPING);
+        setTimeout(this.setState, 20000, this.State.NORMAL);
     }
 
     gainExp(amount){
         this.exp += amount;
         //if reach level up threshold, levelUp(){}
-        if (this.exp > this.levelsByExp[level]){
-            levelUp();
+        if (this.exp > this.levelsByExp[this.level]){
+            this.levelUp();
         }
     }
 
     levelUp(){
         //if certain level reached, stageUp
-        level += 1;
+        this.level += 1;
     }
 
     stageUp(){
         //milestone tracker
-        stage += 1;
+        this.stage += 1;
     }
 
     getId(){
@@ -124,7 +122,7 @@ class Hamster{
 
     //checks if hamster is currently busy
     isBusy(){
-        if (state == SLEEPING || state == EATING || state == DRINKING || state == BEING_PET){
+        if (this.state === this.State.SLEEPING || this.state === this.State.EATING || this.state === this.State.DRINKING || this.state === this.State.BEING_PET){
             this.busy = true;
         }
         else{
