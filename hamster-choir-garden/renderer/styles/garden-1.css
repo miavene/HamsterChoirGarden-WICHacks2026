@@ -121,7 +121,7 @@ body {
 #hamster-popup {
     position: fixed;
     margin-left: 20px;
-    font-size: 12px;
+    font-size: 14px;
     background: #DDE9DF;
     text-align: center;
     flex: 1;                  /* takes available space in sidebar */
@@ -129,8 +129,8 @@ body {
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
-    height: 200px;
-    width: 230px;
+    height: 210px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
@@ -141,12 +141,12 @@ body {
     -webkit-text-stroke-color: #988198;
 }
 
-.hidden {
-    display: none !important;
-}
+/*.hidden {*/
+/*    display: none !important;*/
+/*}*/
 
 #hamster-popup h3 {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 #sidebar-nav a,
@@ -161,7 +161,7 @@ body {
     /*display: flex;*/
     border: 3px solid #99BDA2FF;
     margin: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     font-family: "Cherry Bomb One", system-ui;
     letter-spacing: .1em;
