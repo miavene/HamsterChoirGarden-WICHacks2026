@@ -7,7 +7,7 @@ class Garden{
 
     constructor(maxCapacity){
         this.maxCapacity = maxCapacity
-        this.hamsters = new Set();
+        this.hamsters = [];
         this.hamsterCost = 50;
 
     }
@@ -32,7 +32,7 @@ class Garden{
             randHamster = HAMSTER_TYPES[Object.keys(HAMSTER_TYPES)[rand]];
         }
         const hamster = createHamster(randHamster);
-        this.hamsters.add(hamster);
+        this.hamsters.push(hamster);
 
     }
 
