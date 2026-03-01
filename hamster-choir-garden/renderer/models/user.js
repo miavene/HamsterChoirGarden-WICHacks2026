@@ -27,9 +27,9 @@ class user{
 
     addNewGarden(){
 
-        this.garden = new Garden(10);
-        this.gardens.add(this.garden);
-        return this.garden;
+        const garden = new Garden(10);
+        this.gardens.add(garden);
+        return garden;
         
     }
 
