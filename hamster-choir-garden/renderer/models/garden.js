@@ -27,7 +27,7 @@ class Garden{
         }
 
         user.removeFromCoins(this.hamsterCost);
-        this.hamsterCost = this.hamsterCost * 2;
+        this.hamsterCost = Math.floor(this.hamsterCost * 1.3);
         const hamster = createHamster(randHamsterData);
         this.hamsters.push(hamster);
         return { hamster, isDuplicate: false };
