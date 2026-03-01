@@ -31,6 +31,10 @@ class user{
 
     }
 
+    getFirstGarden(){
+        return this.gardens[0];
+    }
+
 
     addNewGarden(){
 

@@ -25,6 +25,7 @@ let currentGarden = null;
 const gardenSection = document.getElementById("garden");
 if (gardenSection) {
     currentGarden = User.addNewGarden();
+
 }
 
 //keep track of current hamster
@@ -130,6 +131,7 @@ addBtn.addEventListener("click", () => {
         // already have this hamster, just add multiplier
         hamster.multiplier += 0.5;
         addActivity(`${hamster.getName()} got a multiplier boost! (x${hamster.multiplier})`);
+        document.getElementById("revenue").textContent = hamster.getTotalRevenue() + " 🪙";
     } else {
         // new hamster
         const divId = `hamster${hamster.getId()}`;
@@ -189,7 +191,10 @@ closePopupBtn.addEventListener("click", () => {
 try {
     if (currentGarden) {
         currentGarden.collectRevenue();
-        const intervalId = setInterval(currentGarden.collectRevenue(), 1000);
+        setInterval(() => {
+            currentGarden.collectRevenue();
+            updateCoins(); // update coins section
+        }, 1000);
     }
 } catch (error) {
     console.error("Error while scheduling task:", error);
