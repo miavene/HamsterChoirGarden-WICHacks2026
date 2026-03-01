@@ -3,6 +3,11 @@ import Garden from "../renderer/models/garden.js";
 
 //menu page
 
+const exitbtn = document.getElementById("exit-btn");
+exitbtn.addEventListener("click", ()=>{
+    window.close();
+});
+
 const newGardenDiv = document.getElementById("new-garden");
 if (newGardenDiv) {
     const newGardenBtn = newGardenDiv.querySelector("button");
@@ -350,8 +355,8 @@ document.getElementById("pet-btn").addEventListener("click", () => {
 const homebtn = document.getElementById("home-btn");
 homebtn.addEventListener("click", ()=>{
     window.location.href = `../../index.html`;
-
 });
+
 
 
 // update plant button to show the next pull
