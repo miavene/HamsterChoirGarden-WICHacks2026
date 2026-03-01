@@ -22,7 +22,7 @@ class Hamster{
         SLEEPING: {id: "SLEEPING", message: "is sleeping."},
         EATING: {id: "EATING", message: "is eating."},
         DRINKING: {id: "DRINKING", message: "is drinking."},
-        BEING_PET: {id: "BEING_PET", message: "is being pet."}
+        BEING_PET: {id: "BEING PET", message: "is being pet."}
     }
         this.state = this.State.NEW;
         this.onStateChange = null;
@@ -140,6 +140,10 @@ class Hamster{
     //Returns state message
     returnMessage(){
         return this.state.message;
+    }
+
+    getStateName(){
+        return this.state.id;
     }
 
 
