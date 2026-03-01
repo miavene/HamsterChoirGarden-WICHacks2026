@@ -28,7 +28,7 @@ class user{
     addNewGarden(){
 
         const garden = new Garden(10);
-        this.gardens.add(garden);
+        this.gardens.push(garden);
         return garden;
         
     }
