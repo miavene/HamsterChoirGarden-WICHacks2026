@@ -21,6 +21,7 @@ body {
 #activity-feed h3 {
     padding: 1px;
     margin: 0;
+    letter-spacing: .1em;
 }
 
 #activity-feed {
@@ -110,6 +111,7 @@ body {
     padding: 5px 20px;
     transition: all .33s ease;
     width: 60px;
+
 }
 
 
@@ -122,6 +124,7 @@ body {
     position: fixed;
     margin-left: 20px;
     font-size: 14px;
+    letter-spacing: .1em;
     background: #DDE9DF;
     text-align: center;
     flex: 1;                  /* takes available space in sidebar */
@@ -141,9 +144,9 @@ body {
     -webkit-text-stroke-color: #988198;
 }
 
-/*.hidden {*/
-/*    display: none !important;*/
-/*}*/
+.hidden {
+    display: none !important;
+}
 
 #hamster-popup h3 {
     font-size: 14px;
