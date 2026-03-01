@@ -1,5 +1,11 @@
+.cherry-bomb-one-regular {
+    font-family: "Cherry Bomb One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
 body {
     background: #276552;
+    font-family: "Cherry Bomb One", system-ui;
 }
 
 #sidebar {
@@ -55,6 +61,8 @@ body {
     border: 4px solid #99BDA2FF;
     margin: 0;
     font-style: normal;
+    font-family: "Cherry Bomb One", system-ui;
+    letter-spacing: .1em;
     font-size: 18px;
     font-weight: 400;
     color: #bda6c4;
@@ -88,7 +96,6 @@ body {
     margin-left: auto;
     gap: 5px;
     border: 4px solid #99BDA2FF;
-    font-style: normal;
     font-size: 18px;
     font-weight: 400;
     color: #bda6c4;
@@ -154,9 +161,10 @@ body {
     /*display: flex;*/
     border: 3px solid #99BDA2FF;
     margin: 0;
-    font-style: normal;
     font-size: 14px;
     font-weight: 400;
+    font-family: "Cherry Bomb One", system-ui;
+    letter-spacing: .1em;
     color: #bda6c4;
     background-color: #DDE9DF;
     border-radius: 25px;
