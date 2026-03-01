@@ -1,7 +1,7 @@
 
 class Hamster{
 
-    levelsByExp = [24, 74, 199, 499, 1999];
+    levelsByExp = [24, 74, 199, 499, 1999]; //Example: level 0: 0-24 exp. Once it goes above 24 exp (25+ exp), it goes to level 1. 
     State = {
         NORMAL: "NORMAL",
         FULL: "FULL",
@@ -10,14 +10,16 @@ class Hamster{
         SLEEPING: "SLEEPING"
     }
 
-    constructor(id, name){
+    constructor(id, name, baseRevenue){
         this.id = id;
         this.name = name;
+        this.baseRevenue = baseRevenue;
         level = 0;
         stage = 0;
         multiplier = 1;
         exp = 0;
         stage = seed;
+        state = State.NORMAL;
 
     }
 
@@ -72,19 +74,6 @@ class Hamster{
     getMultiplier(){
         return this.multiplier;
     }
-
-
-
-  
-
-
-
-
-
-
-
-
-
 
 
 
