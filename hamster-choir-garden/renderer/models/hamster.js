@@ -14,23 +14,24 @@ class Hamster{
         BEING_PET: {id: "BEING_PET", message: "is being pet."}
     }
 
-    constructor(id, name, baseRevenue){
+    constructor(id, name, baseRevenue, song){
         this.id = id;
         this.name = name;
+        this.song = song
         this.baseRevenue = baseRevenue;
-        level = 0;
-        stage = 0;
-        multiplier = 1;
-        exp = 0;
-        stage = seed;
-        state = State.NORMAL;
-        busy = false;
-        petCounter = 0;
+        this.level = 0;
+        this.stage = 0;
+        this.multiplier = 1;
+        this.exp = 0;
+        this.stage = seed;
+        this.state = State.NORMAL;
+        this.busy = false;
+        this.petCounter = 0;
     }
 
 
     water(){
-        if (this.isBusy){
+        if (this.isBusy()){
             return;
         }
         gainExp(15);
@@ -41,7 +42,7 @@ class Hamster{
 
 
     pet(){
-        if (state = AGITATED || this.isBusy()){
+        if (state == AGITATED || this.isBusy()){
             return;
         }
         gainExp(15);
@@ -76,7 +77,7 @@ class Hamster{
     gainExp(amount){
         exp += amount;
         //if reach level up threshold, levelUp(){}
-        if (exp > expNeeded[level]){
+        if (exp > this.levelsByExp[level]){
             levelUp();
         }
     }
@@ -132,6 +133,7 @@ class Hamster{
         return this.busy;
 
     }
+
 
     //Returns state message
     returnMessage(){

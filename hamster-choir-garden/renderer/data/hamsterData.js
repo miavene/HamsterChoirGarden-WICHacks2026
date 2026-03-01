@@ -4,7 +4,7 @@ export const HAMSTER_TYPES = {
     name: "Bleeblorble",
     id: 0,
     baseRevenue: 10,
-    song: ""
+    song: "../data/songs/A.mp3"
     // multiplier: 1.1,
     // etc can be added here as needed
     
