@@ -147,6 +147,8 @@ class Hamster{
 
 
 
+
+
 }
 
 export default Hamster;
