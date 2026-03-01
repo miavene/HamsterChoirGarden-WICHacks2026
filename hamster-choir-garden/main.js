@@ -7,7 +7,7 @@ const createWindow = () => {
     height: 600
   })
 
-  win.loadFile('renderer/pages/garden-1/index.html')
+  win.loadFile('renderer/index.html')
 }
 app.whenReady().then(() => {
   createWindow()
