@@ -82,16 +82,177 @@ document.getElementById("sleep-btn").addEventListener("click", () => {
     const audio = document.getElementById(`${divId}Audio`);
     if (audio) audio.muted = true;
 
+    if (currentHamster.getId() === 1) {
+        const hamster = document.getElementById("hamster1");
+        const defaultHamster1 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Sleeping.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster1;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 2) {
+        const hamster = document.getElementById("hamster2");
+        const defaultHamster2 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Sleeping.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster2;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 3) {
+        const hamster = document.getElementById("hamster3");
+        const defaultHamster3 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Sleeping.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster3;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 4) {
+        const hamster = document.getElementById("hamster4");
+        const defaultHamster4 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Sleeping.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster4;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 5) {
+        const hamster = document.getElementById("hamster5");
+        const defaultHamster5 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Sleeping.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster5;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 6) {
+        const hamster = document.getElementById("hamster6");
+        const defaultHamster6 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Sleeping.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster6;
+        }, 20000);    }
 });
 
 document.getElementById("feed-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.eat();
+
+    if (currentHamster.getId() === 1) {
+        const hamster = document.getElementById("hamster1");
+        const defaultHamster1 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Eating.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster1;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 2) {
+        const hamster = document.getElementById("hamster2");
+        const defaultHamster2 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Eating.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster2;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 3) {
+        const hamster = document.getElementById("hamster3");
+        const defaultHamster3 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Eating.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster3;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 4) {
+        const hamster = document.getElementById("hamster4");
+        const defaultHamster4 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Eating.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster4;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 5) {
+        const hamster = document.getElementById("hamster5");
+        const defaultHamster5 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Eating.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster5;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 6) {
+        const hamster = document.getElementById("hamster6");
+        const defaultHamster6 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Eating.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster6;
+        }, 20000);    }
 });
 
 document.getElementById("drink-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.water();
+
+    if (currentHamster.getId() === 1) {
+        const hamster = document.getElementById("hamster1");
+        const defaultHamster1 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Drinking.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster1;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 2) {
+        const hamster = document.getElementById("hamster2");
+        const defaultHamster2 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Drinking.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster2;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 3) {
+        const hamster = document.getElementById("hamster3");
+        const defaultHamster3 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Drinking.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster3;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 4) {
+        const hamster = document.getElementById("hamster4");
+        const defaultHamster4 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Drinking.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster4;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 5) {
+        const hamster = document.getElementById("hamster5");
+        const defaultHamster5 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Drinking.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster5;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 6) {
+        const hamster = document.getElementById("hamster6");
+        const defaultHamster6 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Drinking.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster6;
+        }, 20000);    }
 
 });
 
@@ -99,6 +260,59 @@ document.getElementById("pet-btn").addEventListener("click", () => {
     if (!currentHamster) return;
     currentHamster.pet();
 
+    if (currentHamster.getId() === 1) {
+        const hamster = document.getElementById("hamster1");
+        const defaultHamster1 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Petted.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster1;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 2) {
+        const hamster = document.getElementById("hamster2");
+        const defaultHamster2 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Petted.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster2;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 3) {
+        const hamster = document.getElementById("hamster3");
+        const defaultHamster3 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Petted.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster3;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 4) {
+        const hamster = document.getElementById("hamster4");
+        const defaultHamster4 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Petted.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster4;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 5) {
+        const hamster = document.getElementById("hamster5");
+        const defaultHamster5 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Petted.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster5;
+        }, 20000);    }
+
+    if (currentHamster.getId() === 6) {
+        const hamster = document.getElementById("hamster6");
+        const defaultHamster6 = hamster.style.backgroundImage;
+        hamster.style.backgroundImage = "url('../../assets/HamsterStates/Petted.png')";
+        // Revert back after 20 seconds (20000 ms)
+        setTimeout(() => {
+            hamster.style.backgroundImage = defaultHamster6;
+        }, 20000);    }
 });
 
 //home button
@@ -107,6 +321,7 @@ homebtn.addEventListener("click", ()=>{
     window.location.href = `../../index.html`;
 
 });
+
 
 // update plant button to show the next pull
 function updatePlantButton() {
